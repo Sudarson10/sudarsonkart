@@ -1,0 +1,32 @@
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,500&display=swap');
+
+.carousel-item{
+    object-fit: cover;
+    object-position: top;
+    height:50vh;
+    overflow:hidden;
+}
+html{
+    font-size: 14px;
+}
+body{
+    font-family: 'Open Sans',sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.old_price{
+    color:red;
+    font-weight: bold;
+}
+.new_price{
+    color:white;
+    background-color: green;
+    font-weight: bold;
+
+}
+.hello{
+    color:pink;
+}

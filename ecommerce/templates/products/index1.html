@@ -1,0 +1,37 @@
+{%extends 'navbar.html'%}
+
+{% load static%}
+{% block content%}
+<head>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+</head>
+<div class="container" style="margin-top:70px;" >
+    <div class="row">
+      <div class="col-12">
+        <h4 class="mb-3"> <b>{{category__name}} products</b></h4>
+        <hr style="border-color:#b8bfc2;">
+      </div>
+      {% for item in products %}
+      
+      <div class="col-md-4 col-lg-3">
+        <div class="card my-3">
+          <img src="{{item.image.url}}"  class="card-image-top" alt="Categories" height="250px" width="300px">
+          <div class="card-body">
+            <h5 class="card-title text-primary">{{ item.name }}</h5>
+            <p class="card-text">
+              <span class="float-start" style="color:red;
+              font-weight: bold;"><s>Rs.{{ item.original_price | stringformat:'d'}}</s></span>
+              <span class="float-end" style=" color:white;
+              background-color: green;
+              font-weight: bold;">Rs.{{ item.selling_price | stringformat:'d' }}</span>
+            </p>
+          </div>
+          <a href="{% url 'product_details' category__name item.name%}" class="btn btn-secondary">click to view more</a>
+        </div>
+      </div>
+      
+      {% endfor %}
+    </div>
+  </div>
+  
+{% endblock content %}
